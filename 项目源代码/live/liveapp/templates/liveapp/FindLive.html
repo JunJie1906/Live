@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}进入直播{% endblock %}
+{% block css %}{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container">
+    <div class="col-md-4 col-md-offset-4">
+    <form action="/findlive/" method="post">
+        {% csrf_token %}
+    <div class="form-group">
+        {{ RoomForm.roomID.label_tag }}
+        {{ RoomForm.roomID }}
+        {% if erro_message %}
+            <span style="color:red;">{{ erro_message }}</span>
+        {% endif %}
+    </div>
+    <button type="submit">进入</button>
+    </form>
+
+        {% if url %}
+            <a href="{{ url }}">{{ roomName }}</a>
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+

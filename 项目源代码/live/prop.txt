@@ -1,0 +1,3 @@
+rtmp://localhost:1935
+HD Webcam
+麦克风 (Realtek High Definition Audio)

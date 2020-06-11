@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}主页{% endblock %}
+{% block css %}<link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% block content %}
+
+
+
+<br>
+<h3>  正在进行中的直播：</h3>
+{% for live in curr_live %}
+房间名：{{ live.roomName }}<br>
+房间ID：{{ live.roomId }}<br>
+讲师：{{ live.creater }}<br>
+创建时间：{{ live.c_time }}<br>
+
+<br>
+{% endfor %}
+{% endblock %}

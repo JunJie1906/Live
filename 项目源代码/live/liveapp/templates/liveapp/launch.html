@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}发起直播{% endblock %}
+{% block css %}{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <form action="/launch/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ launchForm.LiveName.label_tag }}
+                    {{ launchForm.LiveName }}
+                {% if erro_msg %}
+                    <span style="color:red;">{{ erro_msg }}</span>
+                {% endif %}
+                </div>
+                <button type="submit">发起直播</button>
+            </form>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
